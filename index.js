@@ -129,8 +129,7 @@ bot.on("message", message => {
           `alteasegovia@gmail.com:11235813 | Expiration = 2020-05-17 18:05:11`,
           `plonge11@googlemail.com:deadseed11 | Expiration = 2019-08-22 05:09:10`,
           `robee0921@hotmail.com:password12 | Expiration = 2019-09-01 10:48:05`,
-          `
-          ajauring@me.com:rotatrim | Expiration = 2019-09-05 19:41:31`,
+          `ajauring@me.com:rotatrim | Expiration = 2019-09-05 19:41:31`,
           `project_reset@live.com:0264024Mag | Expiration = 2020-12-26 12:07:13`,
           `niemand262@gmail.com:Mine0007 | Expiration = 2019-09-15 05:46:43`,
           `james.jd.lloyd@gmail.com:Physics1 | Expiration = 2020-05-16 04:59:07`,
