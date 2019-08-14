@@ -6,7 +6,7 @@ const colors = require('colors');
 const OWNER_ID = '606949672275280014'
 var prefix = ".";
 
-bot.login("TOKEN");
+bot.login("NjEwMTQxNzI4MzkzMDAzMDMy.XVRo5A.hnchpGSKIen7IrO6Rly1exCSXmg");
    
 bot.on("ready",   () => {
     
