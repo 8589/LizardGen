@@ -160,7 +160,7 @@ bot.on("message", message => {
           `cleofulghum@gmail.com:crf14958 | Expiration = 2019-08-19 03:12:14`,
           `rozhokserega@gmail.com:12qwaszx | Expiration = 2022-08-13 04:49:32`,
           `mmineweaser@gmail.com:dragon99 | Expiration = 2019-08-16 03:13:32`,
-          `sebtaflinger@yahoo.com:Andrew1215 | Expiration = 2020-07-05 07:43:37`
+          `sebtaflinger@yahoo.com:Andrew1215 | Expiration = 2020-07-05 07:43:37`,
           `mallet.dani@gmail.com:Cooper04`,
           `lightningstaff44@gmail.com:yishmael1`,
           `kyle.voorhees01@gmail.com:Voorhees1`,
