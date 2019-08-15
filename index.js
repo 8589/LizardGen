@@ -212,7 +212,7 @@ bot.on("message", message => {
             .setTitle("📌Nordvpn\n\nhttps://discord.gg/jrzsC6F ")
             .addField('Voici ton compte ! 🎁', "N'oublie pas de partager le serveur a tes amis pour plus de récompenses. 💰")
             .setColor('#261a72')
-            .setFooter('Official Maestro Generator. ')
+            .setFooter('Official Maestro Generator.')
 
 
             message.author.send(nordvpnembed)
