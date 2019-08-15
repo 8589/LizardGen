@@ -27,7 +27,7 @@ bot.on("message", message => {
         .setAuthor(`Requested by ${message.author.username}`)
         .setColor('BLACK')
         .setThumbnail("https://cdn.discordapp.com/attachments/610998589224910852/611126430280974356/GLITCH_20190814111519.gif")
-        .addField("Voici les commandes du générateur :\n`spotify`, `nordvpn`, `wwe`, `canal`, `crunchyroll`, `deezer`, `espn`, `hulu`, `mega`, `minecraft`, `pornhub`, `psn`, `uplay`, `origin`, `steam`,`ubisoft`,`fortnite(bientôt)`.")
+        .addField("Voici les commandes du générateur :\n`spotify`, `nordvpn`, `wwe`, `canal`, `crunchyroll`, `deezer`, `espn`, `hulu`, `mega`, `minecraft`, `pornhub`, `psn`, `uplay`, `origin`, `steam`,`ubisoft`,`fortnite(bientôt)`.","By Maestro")
         .setFooter(`Le Staff vous souhaite une bonne journée !`)
         if  (message.content.includes(prefix + "help")) {  
             message.channel.send(sendembed)
