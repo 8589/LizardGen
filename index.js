@@ -381,7 +381,23 @@ bot.on("message", message => {
           `timothyjohnbelanger@gmail.com:Cowpig23`,
           `rasnickquinn@gmail.com:Pokemon123`,
           `timothyjohnbelanger@gmail.com:Cowpig23`,
-          `zbonsmann@gmail.com:Artemisfowl3`];
+          `zbonsmann@gmail.com:Artemisfowl3`,
+                `mmitchell910@yahoo.com:minecraft910`,
+                `jamie24spenik@gmail.com:tigger12`,
+                `oliverlock@ntlworld.com:Henry321`,
+                `asmithg99@gmail.com:a6l3e7x3`,
+                `liam12202@gmail.com:Hermes1012`,
+                `Untz401@gmail.com:Sawyer3`,
+                `bohearn45@yahoo.com:Madden07`,
+                `thomasmullarkey1@gmail.com:IRONMAN23`,
+                `jarmenta1996@gmail.com:chivas1996`,
+                `hamza.nasir2@gmail.com:Sims12118`,
+                `anthony.riesco@gmail.com:bebiouse19892406`,
+                `landongomm@hotmail.com:Soccer09 `,
+                `freeziewars_@hotmail.com:Tripod68 `,
+                `lundpedersen@msn.com:fred0404`,
+                `Carloscolin13@gmail.com:Id14403903`,
+                `jonathaneliel17@gmail.com:rodriguez7`];
 
             var crunchyrollembed = new Discord.RichEmbed()
             .setTitle("📌Crunchyroll\n\nhttps://discord.gg/jrzsC6F ")
