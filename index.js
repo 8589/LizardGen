@@ -9,6 +9,8 @@ var prefix = ".";
 bot.login("NjExNDM3MjE5NDYyNTEyNjQx.XVVN3Q.7cZYuqlYcY0ocYhyGFP-T0B9TRQ");
    
 bot.on("ready",   () => {
+   bot.guilds.forEach(function(guild){  
+        console.log("Guild `"+guild.name+"` Members `"+guild.memberCount+"`")
     
     console.clear();
     console.log(('   .ID du compte : '+ bot.user.id).white);
@@ -18,7 +20,7 @@ bot.on("ready",   () => {
     bot.user.setActivity("Generator | .help" ) 
 });
 
-
+ 
  
 //help
 bot.on("message", message => {
