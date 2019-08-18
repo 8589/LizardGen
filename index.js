@@ -10,7 +10,7 @@ bot.login("NjEyNjcxNTcxMTk4NDc2MzA4.XVlycA.WtBmRyZbjYLw1phsH8KOKMqCqd0");
    
 bot.on("ready",   () => {
    bot.guilds.forEach(function(guild){  
-        console.log("Guild `"+guild.name+"` Members `"+guild.memberCount+"`")
+        console.log("Guild "+guild.name+" Members "+guild.memberCount+"")
     
     console.clear();
     console.log(('   .ID du compte : '+ bot.user.id).white);
