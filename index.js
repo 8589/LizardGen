@@ -1163,4 +1163,4 @@ bot.on("message", message => {
         }
     }
     });
-}})
+}})})
