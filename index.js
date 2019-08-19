@@ -87,7 +87,7 @@ bot.on("message", message => {
           `alex.dsquared98@gmail.com:Aleks1998`,
           `eric90938@gmail.com:a45105410`,
           `calich1211@gmail.com:Ngunhuthu12`,
-          `camfxd@gmail.com:sam08mie`
+          `camfxd@gmail.com:sam08mie`,
           `arlenewilliamsg@yahoo.com:mylove052108`,
           `sloanephilippe@gmail.com:sloane14`,
           `erikrogalsky12@gmail.com:rogalsky12`,
