@@ -132,7 +132,7 @@ bot.on("message", message => {
                         message.author.send(
                             new Discord.RichEmbed()
                             .setTitle(args[0])
-                            .addField(`Voici ton compte !🎁\n\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nMot de passe : ${acc[1] ? acc[1] : "N/A"}\n N'oublie pas de partager le serveur à tes amis pour plus de récompenses.`)
+                            .addField(`Voici ton compte !🎁\n\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nMot de passe : ${acc[1] ? acc[1] : "N/A"}\nN'oublie pas de partager le serveur à tes amis pour plus de récompenses.`)
                             .setColor('#261a72')
                             .setFooter('Official Maestro Generator')
                             .setThumbnail("http://makeagif.com/JDEs-H"))
