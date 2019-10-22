@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
-const Bot = new Discord.Client()
+const bot = new Discord.Client()
+const figlet = require('figlet');
+const colors = require('colors');
 
 // modules for finding/manipulating files
 const path = require('path')
@@ -40,6 +42,11 @@ async function reloadFiles() {
     let removedFiles = []
     filesAndPermitions = {}
 
+    //Purge the currenly used dirrectory
+    for(const file of fs.readdirSync("./.CurrentlyUsedFiles")){
+        fs.unlinkSync(path.join("./.CurrentlyUsedFiles", file))
+    }
+
     newfiles = fs.readdirSync(filePath)
     
     //checks for newlly added/removed files (only checks whole files, not the changes in them)
@@ -55,6 +62,7 @@ async function reloadFiles() {
         if (permitions === [] || permitions === null){
             console.log(`[*] ${file} Doens't have permitions`)
         } else {
+            fs.writeFileSync(path.join("./.CurrentlyUsedFiles", file), lines)
             filesAndPermitions[file] = permitions
         }
     }
@@ -71,4 +79,24 @@ function getPermitions(permitionLine){
     }
 }
 
-reloadFiles()
+
+bot.on("ready", () => {
+    // console.clear();
+    reloadFiles(fileDir)
+
+    bot.guilds.forEach(function(guild) {
+
+        console.log(`~[ Guild ${guild.name} Members ${guild.memberCount} ]~`)
+        console.log((`   .ID du dompte: ${bot.user.id}`).white);
+        console.log((`   .Connecté à : ${bot.user.tag}`).white);
+        console.log((`   .Version De L'API Discord actuelle : ${Discord.version}`).white);
+
+        console.log(figlet.textSync(".[ CMD ON ].").red);
+        bot.user.setActivity("Generator | .help")
+    })
+})
+
+
+
+
+

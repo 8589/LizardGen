@@ -3,12 +3,6 @@ const bot = new Discord.Client();
 const figlet = require('figlet');
 const colors = require('colors');
 
-// TODO: logging
-// TODO: allow only to ask from the server or spesific chat (if wanted)
-// TODO: input sanitizing
-
-
-
 // modules for finding/manipulating files
 const path = require('path')
 const fs = require('fs')
@@ -20,8 +14,13 @@ token = "NjEzNDY1NDU3MDYzODg2ODQ5.Xa8t-Q.luGqBMni54DlPjK8IR_SPRvwiKA"
 // change to what ever you want the server to serve (path relative)
 fileDir = path.join(__dirname,"/Files")
 // this is going to be the only chate the reload message works from (not 100% secure)
-adminChat = "admin"
 let files = []
+
+let embedInvite = new Discord.RichEmbed()
+                   .setTitle(`\nhttps://discord.gg/jrzsC6F `)
+                   .addField('Voici ton compte ! 🎁', "N'oublie pas de partager le serveur a tes amis pour plus de récompenses. 💰")
+                   .setColor('#261a72')
+                   .setFooter('Official Maestro Generator. ')
 
 
 // Escapes escape characters, so they count as text
@@ -57,14 +56,26 @@ function randomLine(file){
             //Weird thing but turns the line into string... (normal method for that doens't work)
             data = data + ''
             let lines = data.split('\n')
-            let line = lines[Math.round(Math.random() * lines.length) - 1]
-            resolve(line)
+            let permitions = getPermitions(lines[0])
+            let randomNumber = [Math.round(Math.random() * lines.length)] 
+            if (randomNumber == 0) {randomNumber = 1}
+            if (randomNumber == lines.lenght) {randomNumber -= 1}
+            line = lines[randomNumber]
+            resolve([line, permitions])
         })
     })
-
 }
 
-
+// Checks if the first line in a file starts with ### if so 
+// gets the following permitions: ### permitionID, permitionID2
+function getPermitions(permitionLine){
+    if (permitionLine.slice(0,3) === "###"){
+        let permitions = permitionLine.slice(3, permitionLine.lenght).split(",")
+        return permitions.map(permition => permition.trim())
+    } else {
+        return null
+    }
+}
 
 bot.on("ready", () => {
     // console.clear();
@@ -83,15 +94,13 @@ bot.on("ready", () => {
 })
 
 
-
-//help
 bot.on("message", message => {
     // check if a message begins with a prefix
     // if it does separete all words into a list (furure proffing if
     // some commands have arguments)
     if(message.content[0] == prefix){
         let args = message.content.substring(prefix.length).split(" ")
-
+        args.map(arg => addSlashes(arg))
         // Test for all available commands
         switch (args[0]) {
 
@@ -106,39 +115,28 @@ bot.on("message", message => {
                 
                 message.channel.send(sendembed)
                 break;
-
-            // update the bot with new files from fileDir (call when added or removed files)
-            case "reload":
-                if(message.channel.name == adminChat){
-                    //reset the files, get names of added and removed ones
-                    const {addedFiles, removedFiles} = loadfiles(fileDir)
-
-                    let sendembed = new Discord.RichEmbed()
-                    .setColor("RED")
-                    .addField("Added Files", `Added: ${addedFiles.length > 0  ? addedFiles : "N/A"}`)
-                    .addField("Removed Files", `Removed: ${removedFiles.length > 0  ? removedFiles : "N/A"}`)
-                    .addField("All Files", `files: ${files.length > 0  ? files : "N/A"} `)
-                    message.channel.send(sendembed)
-                }
-                break;
             }
         
         // works like a finally in the case switches
         if (args[0]){
             //Checks if the first argument is a file name
             // in which case returns a line from it
-            index = files.indexOf(addSlashes(args[0]))
+            index = files.indexOf(args[0])
             if (index >=0) {
 
-                let embed = new Discord.RichEmbed()
-                   .setTitle(`${files[index]} \nhttps://discord.gg/jrzsC6F `)
-                   .addField('Voici ton compte ! 🎁', "N'oublie pas de partager le serveur a tes amis pour plus de récompenses. 💰")
-                   .setColor('#261a72')
-                   .setFooter('Official Maestro Generator. ')
-
-                message.author.send(embed)
-                randomLine(files[index]).then(line => message.author.send(`Acc: ${line ? line : "N/A"}`))
-                    .catch(err => console.log(err))
+                
+                randomLine(files[index]).then(data => {
+                    if(data[1].includes(message.channel.id)){
+                        message.author.send(embedInvite)
+                        let acc = data[0].split(":")
+                        message.author.send(
+                            new Discord.RichEmbed()
+                            .setTitle(args[0])
+                            .addField(`Voici ton compte !🎁\n\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nMot de passe : ${acc[1] ? acc[1] : "N/A"}\n N'oublie pas de partager le serveur à tes amis pour plus de récompenses.`)
+                            .setColor('#261a72')
+                            .setFooter('Official Maestro Generator')
+                            .setThumbnail("http://makeagif.com/JDEs-H"))
+                    }}).catch(err => console.log(err))
             }
         }
     }
