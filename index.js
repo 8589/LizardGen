@@ -16,12 +16,6 @@ fileDir = path.join(__dirname,"/Files")
 // this is going to be the only chate the reload message works from (not 100% secure)
 let files = []
 
-let embedInvite = new Discord.RichEmbed()
-                   .setTitle(`\nhttps://discord.gg/jrzsC6F `)
-                   .addField('Voici ton compte ! 🎁', "N'oublie pas de partager le serveur a tes amis pour plus de récompenses. 💰")
-                   .setColor('#261a72')
-                   .setFooter('Official Maestro Generator. ')
-
 
 // Escapes escape characters, so they count as text
 function addSlashes( str ) {
@@ -127,7 +121,6 @@ bot.on("message", message => {
                 
                 randomLine(files[index]).then(data => {
                     if(data[1].includes(message.channel.id)){
-                        message.author.send(embedInvite)
                         let acc = data[0].split(":")
                         message.author.send(
                             new Discord.RichEmbed()
