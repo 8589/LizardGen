@@ -15,10 +15,10 @@ const fs = require('fs')
 
 
 // Gloval vars
-var prefix = ".";
-token = "<Add token>"
+let prefix = ".";
+token = "NjEzNDY1NDU3MDYzODg2ODQ5.Xa8t-Q.luGqBMni54DlPjK8IR_SPRvwiKA"
 // change to what ever you want the server to serve (path relative)
-fileDir = path.join(__dirname,"/Cracks")
+fileDir = path.join(__dirname,"/Files")
 // this is going to be the only chate the reload message works from (not 100% secure)
 adminChat = "admin"
 let files = []
@@ -40,7 +40,7 @@ function loadfiles(dir){
     
     //checks for newlly added/removed files (only checks whole files, not the changes in them)
     newfiles.forEach( file => {if(files.indexOf(file) == -1) addedFiles.push(file)})
-    files.forEach( file =>  {if(newfiles.indexOf(file) == -1) removedFiles.push(file)})
+    files.forEach(file =>  {if(newfiles.indexOf(file) == -1) removedFiles.push(file)})
 
     files = newfiles
 
