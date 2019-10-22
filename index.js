@@ -1,3 +1,8 @@
+const Discord = require('discord.js')
+const bot = new Discord.Client()
+const figlet = require('figlet');
+const colors = require('colors');
+
 // modules for finding/manipulating files
 const path = require('path')
 const fs = require('fs')
