@@ -51,9 +51,8 @@ function randomLine(file){
             data = data + ''
             let lines = data.split('\n')
             let permitions = getPermitions(lines[0])
-            let randomNumber = [Math.round(Math.random() * lines.length)] 
+            let randomNumber = [Math.round(Math.random() * lines.length - 1)] 
             if (randomNumber == 0) {randomNumber = 1}
-            if (randomNumber == lines.lenght) {randomNumber -= 1}
             line = lines[randomNumber]
             resolve([line, permitions])
         })
@@ -126,7 +125,6 @@ bot.on("message", message => {
                             new Discord.RichEmbed()
                             .setTitle(args[0])
                             .addField(`Voici ton compte !🎁\n\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nMot de passe : ${acc[1] ? acc[1] : "N/A"}\nN'oublie pas de partager le serveur à tes amis pour plus de récompenses.`)
-                            .setColor('#261a72')
                             .setFooter('Official Maestro Generator')
                             .setThumbnail("http://makeagif.com/JDEs-H"))
                     }}).catch(err => console.log(err))
