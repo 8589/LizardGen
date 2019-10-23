@@ -5,6 +5,8 @@ token = "NjEzNDY1NDU3MDYzODg2ODQ5.XbBrFQ.VHDyhIugcSHZWWBHcwb8GgoauKo"
 let numberOfLinksToSend = 10
 // chat IDs where using scrappers is allowed
 let allowedScrapperChats = ["389074649230606336"]
+allowedScrapperChats.map(id => id.toString())
+
 
 const Discord = require('discord.js')
 const bot = new Discord.Client()
