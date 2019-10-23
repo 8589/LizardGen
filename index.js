@@ -142,7 +142,7 @@ bot.on("message", message => {
                 .setFooter(`Le Staff vous souhaite une bonne journée !`)
                 
                 message.channel.send(sendembed)
-                break;
+                break
 
             case 'pastebin':
                 if(allowedScrapperChats.indexOf(message.channel.id >=0)){
@@ -153,7 +153,9 @@ bot.on("message", message => {
                             embededLinks.addField(nameUrlList[i][0],nameUrlList[i][1])
                         }
                     })
+                    message.channel.send(embededLinks)
                 }
+                break
             }
         
         // works like a finally in the case switches
