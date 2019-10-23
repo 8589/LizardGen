@@ -4,7 +4,7 @@ token = "NjEzNDY1NDU3MDYzODg2ODQ5.XbBrFQ.VHDyhIugcSHZWWBHcwb8GgoauKo"
 // The number of links to send for scrappers
 let numberOfLinksToSend = 10
 // chat IDs where using scrappers is allowed
-let allowedScapperChats = ["389074649230606336"]
+let allowedScrapperChats = ["389074649230606336"]
 
 const Discord = require('discord.js')
 const bot = new Discord.Client()
@@ -143,7 +143,7 @@ bot.on("message", message => {
                 break;
 
             case 'pastebin':
-                if(allowedScapperChats.indexOf(message.channel.id >=0)){
+                if(allowedScapperChatsr.indexOf(message.channel.id >=0)){
                     getPastebinLinks().then(nameUrlList => {
                         let embededLinks = new Discord.RichEmbed()
                         let iteratable = nameUrlList.length < numberOfLinksToSend ? nameUrlList.lenght : numberOfLinksToSend
