@@ -10,7 +10,7 @@ const fs = require('fs')
 
 // Gloval vars
 let prefix = ".";
-token = "NjEzNDY1NDU3MDYzODg2ODQ5.Xa8t-Q.luGqBMni54DlPjK8IR_SPRvwiKA"
+token = "NjM2NDQ5MDAxMjQ3NjA0NzQ4.Xa_xfQ.fG5lIFRhFm8z0jGuY96IRqB13Fs"
 // change to what ever you want the server to serve (path relative)
 fileDir = path.join(__dirname,"/Files")
 // this is going to be the only chate the reload message works from (not 100% secure)
