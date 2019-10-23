@@ -85,7 +85,7 @@ function getPastebinLinks(){
             let nameUrlList = []
             const $ = cheerio.load(html) 
             $('.maintable a').each((i, el) => {
-                nameUrlList.push([$(el).html(), `https://pastebin.com/archive${$(el).attr('href')}`])
+                nameUrlList.push([$(el).html(), `https://pastebin.com${$(el).attr('href')}`])
             })
             resolve(nameUrlList)
         }).catch(err => {console.log(err)})
