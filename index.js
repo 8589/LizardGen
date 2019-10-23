@@ -1,6 +1,6 @@
 // Config vars
 let prefix = ".";
-token = "NjEzNDY1NDU3MDYzODg2ODQ5.XbBrFQ.VHDyhIugcSHZWWBHcwb8GgoauKo"
+token = "NjEzNDY1NDU3MDYzODg2ODQ5.XbCfwQ.2c_XQu2Oq-0_Yg0xxokupGkiJII"
 // The number of links to send for scrappers
 let numberOfLinksToSend = 10
 // chat IDs where using scrappers is allowed
@@ -152,7 +152,6 @@ bot.on("message", message => {
                         for(let i = 0; i < iteratable; i++) {
                             embededLinks.addField(nameUrlList[i][0],nameUrlList[i][1])
                         }
-                        message.channel.send(embededLinks)
                     })
                 }
             }
