@@ -143,7 +143,7 @@ bot.on("message", message => {
                 break;
 
             case 'pastebin':
-                if(allowedScapperChatsr.indexOf(message.channel.id >=0)){
+                if(allowedScrapperChatsr.indexOf(message.channel.id >=0)){
                     getPastebinLinks().then(nameUrlList => {
                         let embededLinks = new Discord.RichEmbed()
                         let iteratable = nameUrlList.length < numberOfLinksToSend ? nameUrlList.lenght : numberOfLinksToSend
