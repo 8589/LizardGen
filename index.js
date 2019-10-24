@@ -137,12 +137,16 @@ bot.on("message", message => {
             // print the help message
             case 'help':
                 let sendembed = new Discord.RichEmbed()
-                .setAuthor(`Requested by ${message.author.username}`)
                 .setColor('BLACK')
                 .setThumbnail("https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif")
-                .addField("Voici les commandes du générateur(.) :", files)
-                .setFooter(`Le Staff vous souhaite une bonne journée !`)
-                
+                .setTitle('Le prefix est "."')
+                .setDescription("Voir les conditions d'accès dans #infos-gen")
+                .addBlankField()
+                .addField('Générateur premium', 'netflix\ndatabase\ntool\ne-book\nmethod', true)
+                .addField('Générateur basique', files, true)
+                .addField('Générateur gratuit', 'spotify', true)
+                .setTimestamp()
+                .setFooter(`Le Staff vous souhaite une bonne journée !`, `https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif`)
                 message.channel.send(sendembed)
                 break
 
