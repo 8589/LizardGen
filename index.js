@@ -137,7 +137,7 @@ bot.on("message", message => {
                 let sendembed = new Discord.RichEmbed()
                 .setAuthor(`Requested by ${message.author.username}`)
                 .setColor('BLACK')
-                .setThumbnail("https://cdn.discordapp.com/attachments/610998589224910852/611126430280974356/GLITCH_20190814111519.gif")
+                .setThumbnail("https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif")
                 .addField("Voici les commandes du générateur(.) :", files)
                 .setFooter(`Le Staff vous souhaite une bonne journée !`)
                 
