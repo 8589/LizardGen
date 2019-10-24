@@ -1,10 +1,12 @@
 // Config vars
 let prefix = ".";
 token = "NjM2NDQ5MDAxMjQ3NjA0NzQ4.XbGQEg.X-3jSfJNJwPFn_yh0I-6xwGK-bg"
+// token = "NjEzNDY1NDU3MDYzODg2ODQ5.XbGY3A.kcPVHkKn1kpO26Q1RtYEHxe90dc"
 // The number of links to send for scrappers
 let numberOfLinksToSend = 10
 // chat IDs where using scrappers is allowed
 let allowedScrapperChats = ["635402049898676244"]
+// let allowedScrapperChats = ["389074649230606336"]
 allowedScrapperChats.map(id => id.toString())
 
 
@@ -152,8 +154,8 @@ bot.on("message", message => {
                         for(let i = 0; i < iteratable; i++) {
                             embededLinks.addField(nameUrlList[i][0],nameUrlList[i][1])
                         }
+                        message.channel.send(embededLinks)
                     })
-                    message.channel.send(embededLinks)
                 }
                 break
             }
@@ -176,7 +178,7 @@ bot.on("message", message => {
                             .setFooter('Official Maestro Generator')
                             .setThumbnail("http://makeagif.com/JDEs-H"))
 
-                        message.channel.send(`${args[0]} -- Generated Successfully`)
+                        message.channel.send(`${args[0]} -- ${message.author.username} Generated Successfully`)
                     }}).catch(err => console.log(err))
             }
         }
