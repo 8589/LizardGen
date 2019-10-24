@@ -176,7 +176,7 @@ bot.on("message", message => {
                             .setFooter('Official Maestro Generator')
                             .setThumbnail("http://makeagif.com/JDEs-H"))
 
-                        message.channel.send(`${args[0]} -- Generated Succesfully`)
+                        message.channel.send(`${args[0]} -- Generated Successfully`)
                     }}).catch(err => console.log(err))
             }
         }
