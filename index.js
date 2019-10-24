@@ -142,7 +142,7 @@ bot.on("message", message => {
                 .setTitle('Le prefix est "."')
                 .setDescription("Voir les conditions d'accès dans #infos-gen")
                 .addBlankField()
-                .addField('Générateur premium', 'netflix\ndatabase\ntool\ne-book\nmethod', true)
+                .addField('Générateur premium', 'netflix\ndatabase\ntool\ne-book\nmethod\nscriptweb\nscriptbot\nleak', true)
                 .addField('Générateur basique', files, true)
                 .addField('Générateur gratuit', 'spotify', true)
                 .setTimestamp()
