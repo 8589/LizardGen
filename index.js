@@ -139,7 +139,7 @@ bot.on("message", message => {
                 let sendembed = new Discord.RichEmbed()
                 .setColor('BLACK')
                 .setThumbnail("https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif")
-                .setURL('https://donatebot.io/checkout/637227559825965080
+                .setURL("https://donatebot.io/checkout/637227559825965080")
 ')
                 .setTitle('Prefix is "."')
                 .setDescription("All commands in #help")
