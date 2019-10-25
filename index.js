@@ -181,7 +181,7 @@ bot.on("message", message => {
                             .setFooter('Official Maestro Generator')
                             .setThumbnail("https://thumbs.gfycat.com/LimpEnchantingAfricanelephant-small.gif"))
 
-                        message.channel.send(`**${message.author.username}**\n${args[0]} Successfully Generated\nLook yours DMs.`)
+                        message.channel.send(`**${message.author.username}**\n${args[0]} Successfully Generated\nLook your DMs.`)
                     }}).catch(err => console.log(err))
             }
         }
