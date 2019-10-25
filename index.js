@@ -179,7 +179,7 @@ bot.on("message", message => {
                             .setTitle(args[0])
                             .addField(`Here is your account`,`\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nPassword : ${acc[1] ? acc[1] : "N/A"}\nTo help us : https://donatebot.io/checkout/637227559825965080`)
                             .setFooter('Official Maestro Generator')
-                            .setThumbnail("http://makeagif.com/JDEs-H"))
+                            .setThumbnail("https://thumbs.gfycat.com/LimpEnchantingAfricanelephant-small.gif"))
 
                         message.channel.send(`**${message.author.username}**\n${args[0]}Successfully Generated\nLook yours DMs.`)
                     }}).catch(err => console.log(err))
