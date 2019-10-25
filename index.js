@@ -139,13 +139,15 @@ bot.on("message", message => {
                 let sendembed = new Discord.RichEmbed()
                 .setColor('BLACK')
                 .setThumbnail("https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif")
+                .setURL('https://donatebot.io/checkout/637227559825965080
+')
                 .setTitle('Prefix is "."')
                 .setDescription("All commands in #help")
                 .addBlankField()
                 .addField('Générateur premium', 'netflix\ndatabase\ntool\ne-book\nmethod\nscriptweb\nscriptbot\nleak\ncreditcard', true)
                 .addField('Générateur basique', files, true)
                 .setTimestamp()
-                .setFooter(`Le Staff vous souhaite une bonne journée !`, `https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif`)
+                .setFooter(`Enjoy and don't forget to vouch !`, `https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif`)
                 message.channel.send(sendembed)
                 break
 
