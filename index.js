@@ -1,12 +1,12 @@
 // Config vars
 let prefix = ".";
-token = "NjM2NDQ5MDAxMjQ3NjA0NzQ4.XbGQEg.X-3jSfJNJwPFn_yh0I-6xwGK-bg"
-// token = "NjEzNDY1NDU3MDYzODg2ODQ5.XbGY3A.kcPVHkKn1kpO26Q1RtYEHxe90dc"
+token = "NjM3MjMxMzk5NTM5MDQ4NDQ4.XbLKFQ.IPxfG77MNlUXz88AmIqWMb8TZL8"
+// token = "NjM3MjMxMzk5NTM5MDQ4NDQ4.XbLKFQ.IPxfG77MNlUXz88AmIqWMb8TZL8"
 // The number of links to send for scrappers
 let numberOfLinksToSend = 10
 // chat IDs where using scrappers is allowed
-let allowedScrapperChats = ["635402049898676244"]
-// let allowedScrapperChats = ["389074649230606336"]
+let allowedScrapperChats = ["637231605521448960"]
+// let allowedScrapperChats = ["637231605521448960"]
 allowedScrapperChats.map(id => id.toString())
 
 
