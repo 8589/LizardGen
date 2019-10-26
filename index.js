@@ -38,24 +38,6 @@ function addSlashes( str ) {
     return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
 }
 
-//replaced
-// // Get all the files in /files dir
-// function loadfiles(dir){
-//     let newfiles = []
-//     let addedFiles = []
-//     let removedFiles = []
-
-//     newfiles = fs.readdirSync(fileDir)
-    
-//     //checks for newlly added/removed files (only checks whole files, not the changes in them)
-//     newfiles.forEach( file => {if(files.indexOf(file) == -1) addedFiles.push(file)})
-//     files.forEach(file =>  {if(newfiles.indexOf(file) == -1) removedFiles.push(file)})
-
-//     files = newfiles
-
-//     return {"addedFiles": addedFiles,
-//             "removedFiles": removedFiles}
-// }
 
 // get a random line from a file
 function randomLine(fileDir){
@@ -175,7 +157,6 @@ bot.on("message", message => {
             
             // first item -- type of line it will have, second -- the path for the files to read from
             let toRead = []
-            //TODO: create someting that reads from different folders 
             let comboIndex = comboFiles.indexOf(args[0])
             let linkIndex = linkFiles.indexOf(args[0])
 
