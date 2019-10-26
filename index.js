@@ -1,12 +1,12 @@
 // Config vars
 let prefix = ".";
 token = "NjM3MjMxMzk5NTM5MDQ4NDQ4.XbLhXA.ebA1zaiyMMVt_BGOpcW4dVUu5gc"
-// token = "NjM3MjMxMzk5NTM5MDQ4NDQ4.XbLhXA.ebA1zaiyMMVt_BGOpcW4dVUu5gc"
+// token = "NjEzNDY1NDU3MDYzODg2ODQ5.XbRZZw.EsCI1_1BLwdK7kTk4kV9DXhd9jc"
 // The number of links to send for scrappers
 let numberOfLinksToSend = 10
 // chat IDs where using scrappers is allowed
 let allowedScrapperChats = ["637231605521448960"]
-// let allowedScrapperChats = ["637231605521448960"]
+// let allowedScrapperChats = ["389074649230606336"]
 allowedScrapperChats.map(id => id.toString())
 
 
@@ -18,17 +18,17 @@ const fetch = require('node-fetch')
 const cheerio = require("cheerio")
 
 
-// modules for finding/manipulating files
+// modules for finding/manipulating  
 const path = require('path')
 const fs = require('fs')
-
+// change to what ever you want the server to serve (path relative)
+comboDir = path.join(__dirname,"./Combos")
+linkDir = path.join(__dirname,"./Links")
 
 // Gloval vars
-// change to what ever you want the server to serve (path relative)
-fileDir = path.join(__dirname,"/Files")
 // this is going to be the only chate the reload message works from (not 100% secure)
-let files = []
-
+let linkFiles = []
+let comboFiles = []
 
 
 
@@ -38,29 +38,29 @@ function addSlashes( str ) {
     return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
 }
 
+//replaced
+// // Get all the files in /files dir
+// function loadfiles(dir){
+//     let newfiles = []
+//     let addedFiles = []
+//     let removedFiles = []
 
-// Get all the files in /files dir
-function loadfiles(dir){
-    let newfiles = []
-    let addedFiles = []
-    let removedFiles = []
-
-    newfiles = fs.readdirSync(fileDir)
+//     newfiles = fs.readdirSync(fileDir)
     
-    //checks for newlly added/removed files (only checks whole files, not the changes in them)
-    newfiles.forEach( file => {if(files.indexOf(file) == -1) addedFiles.push(file)})
-    files.forEach(file =>  {if(newfiles.indexOf(file) == -1) removedFiles.push(file)})
+//     //checks for newlly added/removed files (only checks whole files, not the changes in them)
+//     newfiles.forEach( file => {if(files.indexOf(file) == -1) addedFiles.push(file)})
+//     files.forEach(file =>  {if(newfiles.indexOf(file) == -1) removedFiles.push(file)})
 
-    files = newfiles
+//     files = newfiles
 
-    return {"addedFiles": addedFiles,
-            "removedFiles": removedFiles}
-}
+//     return {"addedFiles": addedFiles,
+//             "removedFiles": removedFiles}
+// }
 
 // get a random line from a file
-function randomLine(file){
+function randomLine(fileDir){
     return new Promise(function(resolve, reject){
-        fs.readFile(path.join(fileDir, file), (err, data) => {
+        fs.readFile(fileDir, (err, data) => {
             if (err) reject(err)
 
             //Weird thing but turns the line into string... (normal method for that doens't work)
@@ -108,8 +108,8 @@ function getPermitions(permitionLine){
 }
 
 bot.on("ready", () => {
-    // console.clear();
-    loadfiles(fileDir)
+    comboFiles = fs.readdirSync(comboDir)
+    linkFiles = fs.readdirSync(linkDir)
 
     bot.guilds.forEach(function(guild) {
 
@@ -144,7 +144,7 @@ bot.on("message", message => {
                 .setDescription("All commands in #help")
                 .addBlankField()
                 .addField('Générateur premium', 'netflix\ndatabase\ntool\ne-book\nmethod\nscriptweb\nscriptbot\nleak\ncreditcard', true)
-                .addField('Générateur basique', files, true)
+                .addField('Générateur basique', comboFiles, true)
                 .setTimestamp()
                 .setFooter(`Enjoy and don't forget to vouch !`, `https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif`)
                 message.channel.send(sendembed)
@@ -167,23 +167,51 @@ bot.on("message", message => {
         // works like a finally in the case switches
         if (args[0]){
             //Checks if the first argument is a file name
-            // in which case returns a line from it
-            index = files.indexOf(args[0])
-            if (index >=0) {
+            // in which case formats the line (for now there are 2 formats:
+            // combos (email:password) 
+            // links, each line has 1 link
+            // 
+            // formats them accordinly and sends them the requester
+            
+            // first item -- type of line it will have, second -- the path for the files to read from
+            let toRead = []
+            //TODO: create someting that reads from different folders 
+            let comboIndex = comboFiles.indexOf(args[0])
+            let linkIndex = linkFiles.indexOf(args[0])
 
-                
-                randomLine(files[index]).then(data => {
-                    if(data[1].includes(message.channel.id)){
-                        let acc = data[0].split(":")
+            // Set the toRead list for reading files and sending messages
+            if (comboIndex >= 0) {toRead[0] = "combo"; toRead[1] = path.join(comboDir, comboFiles[comboIndex])}
+            if (linkIndex >= 0) {toRead[0] = "link"; toRead[1] = path.join(linkDir, linkFiles[linkIndex])}
+            
+            if (toRead[0]) {
+                randomLine(toRead[1]).then(data => {
+                if(data[1].includes(message.channel.id)){
+
+                    switch (toRead[0]){
+
+                    case "combo":
+                    let acc = data[0].split(":")
+                    message.author.send(
+                        new Discord.RichEmbed()
+                        .setTitle(args[0])
+                        .addField(`Here is your account`,`\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nPassword : ${acc[1] ? acc[1] : "N/A"}\nTo help us : https://donatebot.io/checkout/637227559825965080`)
+                        .setFooter('Official Maestro Generator')
+                        .setThumbnail("https://thumbs.gfycat.com/LimpEnchantingAfricanelephant-small.gif"))
+                        break
+
+                    case "link":
                         message.author.send(
                             new Discord.RichEmbed()
                             .setTitle(args[0])
-                            .addField(`Here is your account`,`\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nPassword : ${acc[1] ? acc[1] : "N/A"}\nTo help us : https://donatebot.io/checkout/637227559825965080`)
+                            .addField("Here is your link:", `[ ${data[0]} ]`)
                             .setFooter('Official Maestro Generator')
-                            .setThumbnail("https://thumbs.gfycat.com/LimpEnchantingAfricanelephant-small.gif"))
-
-                        message.channel.send(`**${message.author.username}**\n${args[0]} Successfully Generated\nLook your DMs.`)
-                    }}).catch(err => console.log(err))
+                            .setThumbnail("https://thumbs.gfycat.com/LimpEnchantingAfricanelephant-small.gif")
+                        )
+                        break
+                    }
+            
+                    message.channel.send(`**${message.author.username}**\n${args[0]} Successfully Generated\nLook your DMs.`)
+                }}).catch(err => console.log(err))
             }
         }
     }
