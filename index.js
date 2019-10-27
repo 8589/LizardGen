@@ -123,7 +123,7 @@ bot.on("message", message => {
                 .setThumbnail("https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif")
                 .setURL("https://donatebot.io/checkout/637227559825965080")
                 .setTitle('Prefix is "."')
-                .setDescription("All commands in #help")
+                .setDescription("To see all stocks do .stock")
                 .addBlankField()
                 .addField('Générateur premium', 'netflix\ndatabase\ntool\nproxies\ne-book\nmethod\nscriptweb\nscriptbot\nleak\ncreditcard(contact Maestro)', true)
                 .addField('Générateur basique', comboFiles, true)
