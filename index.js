@@ -1,7 +1,7 @@
 // Config vars
 let prefix = ".";
-token = "NjM3MjMxMzk5NTM5MDQ4NDQ4.XbLhXA.ebA1zaiyMMVt_BGOpcW4dVUu5gc"
-// token = "NjEzNDY1NDU3MDYzODg2ODQ5.XbRZZw.EsCI1_1BLwdK7kTk4kV9DXhd9jc"
+token = "NjM4Mjc3NTMzOTgwMjk1MTc5.XbaYYg.D3TbPp5CsIwWiEydBzUHXMJsBmw"
+// token = "NjM4Mjc3NTMzOTgwMjk1MTc5.XbaYYg.D3TbPp5CsIwWiEydBzUHXMJsBmw"
 // The number of links to send for scrappers
 let numberOfLinksToSend = 10
 // chat IDs where using scrappers is allowed
