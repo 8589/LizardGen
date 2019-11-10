@@ -1,8 +1,8 @@
 # maestro-gen-zebi
 
-add all you email:pass to ./Files and make sure they are formated like this:
+Add all yours email:pass to ./Files and make sure they are formated like this:
 
-first line:
+First line:
 '### id of a chat it can be in, id of a chat it can be in2, etc'
 email:password
 email:password
