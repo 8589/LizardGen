@@ -5,8 +5,8 @@ token = "NjM4Mjc3NTMzOTgwMjk1MTc5.XbaYYg.D3TbPp5CsIwWiEydBzUHXMJsBmw"
 // The number of links to send for scrappers
 let numberOfLinksToSend = 10
 // chat IDs where using scrappers is allowed
-let allowedScrapperChats = ["637231605521448960"]
-// let allowedScrapperChats = ["389074649230606336"]
+let allowedScrapperChats = ["643087000949227580"]
+// let allowedScrapperChats = ["643087000949227580"]
 allowedScrapperChats.map(id => id.toString())
 
 
