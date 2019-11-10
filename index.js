@@ -174,7 +174,7 @@ bot.on("message", message => {
                     message.author.send(
                         new Discord.RichEmbed()
                         .setTitle(args[0])
-                        .addField(`Here is your account`,`\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nPassword : ${acc[1] ? acc[1] : "N/A"}\nTo help us : https://donatebot.io/checkout/637227559825965080`)
+                        .addField(`Here is your account`,`\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nPassword : ${acc[1] ? acc[1] : "N/A"}\nTo help us : https://donatebot.io/checkout/639098012169404426`)
                         .setFooter('Official Maestro Generator')
                         .setThumbnail("https://thumbs.gfycat.com/LimpEnchantingAfricanelephant-small.gif"))
                         break
