@@ -1,4 +1,4 @@
-# maestro-gen-zebi
+# maestro-gen
 
 Add all yours email:pass to ./Files and make sure they are formated like this:
 
@@ -8,4 +8,9 @@ email:password
 email:password
 etc.
 
+For links it's the same, but not email:password, just the link of what you want to add.
+
 The bot reloads all it's file on startup
+
+If you want to contact me, add me on Discord : Yaikmic.Apo#4778
+
