@@ -124,7 +124,7 @@ bot.on("message", message => {
                 .setTitle('Prefix is "."')
                 .setDescription("To see all stocks do .stock")
                 .addBlankField()
-                .addField('Générateur premium', 'database\ntool\nproxies\ne-book\nmethod\nscriptweb\nscriptbot\nleak\ncreditcard(contact Maestro)', true)
+                .addField('Générateur premium', 'netflix\ndatabase\ntool\nproxies\ne-book\nmethod\nscriptweb\nscriptbot\nleak\ncreditcard(contact Maestro)', true)
                 .addField('Générateur basique', comboFiles, true)
                 .setTimestamp()
                 .setFooter(`Enjoy and don't forget to vouch !`, `https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif`)
