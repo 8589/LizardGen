@@ -8,7 +8,7 @@ let numberOfLinksToSend = 10
 let allowedScrapperChats = ["643087000949227580"]
 // let allowedScrapperChats = ["643087000949227580"]
 allowedScrapperChats.map(id => id.toString())
-
+//this is a test
 
 const Discord = require('discord.js')
 const bot = new Discord.Client()
