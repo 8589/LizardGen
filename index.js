@@ -123,9 +123,9 @@ bot.on("message", message => {
         let email = msg.content.replace('.search ', '').strip();    // on récupère ce qu'il y a après le .search
 
         if (isMailCorrupted(mail)) {
-            message.channel.send('email corrompus!')
+            message.channel.send('Your email has been compromised!\nVotre email a été compromis!')
         } else {
-            message.channel.send('email non corrompus')
+            message.channel.send("Your email has not been compromised\nVotre email n'a pas été compromis.")
         }
 
     }
