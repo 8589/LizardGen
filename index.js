@@ -35,7 +35,6 @@ async function isMailCorrupted(mail) {
 
 // modules for finding/manipulating  
 const path = require('path')
-const fs = require('fs')
 // change to what ever you want the server to serve (path relative)
 comboDir = path.join(__dirname,"./Combos")
 linkDir = path.join(__dirname,"./Links")
