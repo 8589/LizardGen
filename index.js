@@ -16,7 +16,22 @@ const figlet = require('figlet');
 const colors = require('colors');
 const fetch = require('node-fetch')
 const cheerio = require("cheerio")
+const fs = require('fs'); 
 
+async function isMailCorrupted(mail) {
+
+    let filehandle = null;
+    var contents = fs.readFileSync('db.txt', 'utf8');
+
+    let lines = contents.replace('\r', '').split('\n');
+
+    for (let line of lines) {
+        if (line != '' && line == mail) {
+            return true;
+        }
+    }
+    return false;
+}
 
 // modules for finding/manipulating  
 const path = require('path')
@@ -104,8 +119,17 @@ bot.on("ready", () => {
     })
 })
 
-
 bot.on("message", message => {
+    if (message.content.startsWith('.search')&& message.channel.id == '696759195298562159') {
+        let email = msg.content.replace('.search ', '').strip();    // on récupère ce qu'il y a après le .search
+
+        if (isMailCorrupted(mail)) {
+            message.channel.send('email corrompus!')
+        } else {
+            message.channel.send('email non corrompus')
+        }
+
+    }
     // check if a message begins with a prefix
     // if it does separete all words into a list (furure proffing if
     // some commands have arguments)
