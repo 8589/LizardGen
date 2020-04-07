@@ -44,6 +44,32 @@ linkDir = path.join(__dirname,"./Links")
 let linkFiles = []
 let comboFiles = []
 
+bot.login("NjgyNjcxOTYxODIxOTM3OTMx.Xn3GOg.QX1aLC3Q40XyfSglRBeZoczVP80")
+bot.on('ready', () => {
+    console.log(`Logged in as ${bot.user.tag}!`);
+});
+
+bot.on('message', async msg => {
+    if (msg.content.startsWith('.search')) {
+        let args = msg.content
+        let cmd = args.replace(".search", "")
+        let all = cmd.replace(" ", "")
+        let email = `${all}`
+        async function isMailCorrupted(){
+            let filehandle = null;
+            var contents = fs.readFileSync('db.txt', 'utf8');
+            var line = contents.includes(`${email}`)
+            if (line){
+                await msg.channel.send('Email corrupted!')
+            }
+            else{
+                await msg.channel.send('Email not corrupted.')
+            }
+        }
+        isMailCorrupted()
+    }
+});
+
 
 
 
