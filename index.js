@@ -18,21 +18,6 @@ const fetch = require('node-fetch')
 const cheerio = require("cheerio")
 const fs = require('fs'); 
 
-async function isMailCorrupted(mail) {
-
-    let filehandle = null;
-    var contents = fs.readFileSync('db.txt', 'utf8');
-
-    let lines = contents.replace('\r', '').split('\n');
-
-    for (let line of lines) {
-        if (line != '' && line == mail) {
-            return true;
-        }
-    }
-    return false;
-}
-
 // modules for finding/manipulating  
 const path = require('path')
 // change to what ever you want the server to serve (path relative)
@@ -48,30 +33,6 @@ bot.login("NjgyNjcxOTYxODIxOTM3OTMx.Xn3GOg.QX1aLC3Q40XyfSglRBeZoczVP80")
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
 });
-
-bot.on('message', async msg => {
-    if (msg.content.startsWith('.search')) {
-        let args = msg.content
-        let cmd = args.replace(".search", "")
-        let all = cmd.replace(" ", "")
-        let email = `${all}`
-        async function isMailCorrupted(){
-            let filehandle = null;
-            var contents = fs.readFileSync('db.txt', 'utf8');
-            var line = contents.includes(`${email}`)
-            if (line){
-                await msg.channel.send('Email corrupted!')
-            }
-            else{
-                await msg.channel.send('Email not corrupted.')
-            }
-        }
-        isMailCorrupted()
-    }
-});
-
-
-
 
 // Escapes escape characters, so they count as text
 function addSlashes( str ) {
