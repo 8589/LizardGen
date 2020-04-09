@@ -129,7 +129,7 @@ bot.on("message", message => {
                 let sendembed = new Discord.RichEmbed()
                 .setColor('BLACK')
                 .setThumbnail("https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif")
-                .setURL("https://donatebot.io/checkout/639098012169404426")
+                .setURL("https://donatebot.io/checkout/667129262368751626")
                 .setTitle('Prefix is "."')
                 .setDescription("To see all stocks do .stock")
                 .addBlankField()
@@ -183,7 +183,7 @@ bot.on("message", message => {
                     message.author.send(
                         new Discord.RichEmbed()
                         .setTitle(args[0])
-                        .addField(`Here is your account`,`\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nPassword : ${acc[1] ? acc[1] : "N/A"}\nTo help us : https://donatebot.io/checkout/639098012169404426`)
+                        .addField(`Here is your account`,`\nE-mail : ${acc[0] ? acc[0] : "N/A"}\nPassword : ${acc[1] ? acc[1] : "N/A"}\nTo help us : https://donatebot.io/checkout/667129262368751626`)
                         .setFooter('Official Maestro Generator')
                         .setThumbnail("https://thumbs.gfycat.com/LimpEnchantingAfricanelephant-small.gif"))
                         break
