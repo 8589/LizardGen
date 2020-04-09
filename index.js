@@ -16,11 +16,10 @@ const figlet = require('figlet');
 const colors = require('colors');
 const fetch = require('node-fetch')
 const cheerio = require("cheerio")
-
+const fs = require('fs'); 
 
 // modules for finding/manipulating  
 const path = require('path')
-const fs = require('fs')
 // change to what ever you want the server to serve (path relative)
 comboDir = path.join(__dirname,"./Combos")
 linkDir = path.join(__dirname,"./Links")
@@ -30,8 +29,10 @@ linkDir = path.join(__dirname,"./Links")
 let linkFiles = []
 let comboFiles = []
 
-
-
+bot.login("NjgyNjcxOTYxODIxOTM3OTMx.Xn3GOg.QX1aLC3Q40XyfSglRBeZoczVP80")
+bot.on('ready', () => {
+    console.log(`Logged in as ${bot.user.tag}!`);
+});
 
 // Escapes escape characters, so they count as text
 function addSlashes( str ) {
@@ -104,8 +105,17 @@ bot.on("ready", () => {
     })
 })
 
-
 bot.on("message", message => {
+    if (message.content.startsWith('.search')&& message.channel.id == '696759195298562159') {
+        let email = msg.content.replace('.search ', '').strip();    // on récupère ce qu'il y a après le .search
+
+        if (isMailCorrupted(mail)) {
+            message.channel.send('Your email has been compromised!\nVotre email a été compromis!')
+        } else {
+            message.channel.send("Your email has not been compromised\nVotre email n'a pas été compromis.")
+        }
+
+    }
     // check if a message begins with a prefix
     // if it does separete all words into a list (furure proffing if
     // some commands have arguments)
@@ -124,7 +134,7 @@ bot.on("message", message => {
                 .setTitle('Prefix is "."')
                 .setDescription("To see all stocks do .stock")
                 .addBlankField()
-                .addField('Générateur premium', 'database\ntool\nproxies\ne-book\nmethod\nscriptweb\nscriptbot\nleak\ncreditcard(contact Maestro)', true)
+                .addField('Générateur premium', 'database\ntool\nproxies\ne-book\nmethod\nscriptweb\nscriptbot\nleak\nto get more contact Yaikmic', true)
                 .addField('Générateur basique', comboFiles, true)
                 .setTimestamp()
                 .setFooter(`Enjoy and don't forget to vouch !`, `https://cdn.discordapp.com/attachments/636450237338222592/636795804052357159/MOSHED-2019-10-23-17-50-24.gif`)
