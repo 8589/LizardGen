@@ -90,7 +90,7 @@ function getPermitions(permitionLine){
 
 const readline = require('readline');
 
-var file = '/Files';
+var file = '/Combos';
 var linesCount = 0;
 var rl = readline.createInterface({
     input: fs.createReadStream(file),
