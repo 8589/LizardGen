@@ -88,6 +88,22 @@ function getPermitions(permitionLine){
     }
 }
 
+const readline = require('readline');
+
+var file = '/Files';
+var linesCount = 0;
+var rl = readline.createInterface({
+    input: fs.createReadStream(file),
+    output: process.stdout,
+    terminal: false
+});
+rl.on('line', function (line) {
+    linesCount++; // on each linebreak, add +1 to 'linesCount'
+});
+rl.on('close', function () {
+    console.log(linesCount); // print the result when the 'close' event is called
+});
+
 bot.on("ready", () => {
     comboFiles = fs.readdirSync(comboDir)
     linkFiles = fs.readdirSync(linkDir)
@@ -105,16 +121,6 @@ bot.on("ready", () => {
 })
 
 bot.on("message", message => {
-    if (message.content.startsWith('.search')&& message.channel.id == '696759195298562159') {
-        let email = msg.content.replace('.search ', '').strip();    // on récupère ce qu'il y a après le .search
-
-        if (isMailCorrupted(mail)) {
-            message.channel.send('Your email has been compromised!\nVotre email a été compromis!')
-        } else {
-            message.channel.send("Your email has not been compromised\nVotre email n'a pas été compromis.")
-        }
-
-    }
     // check if a message begins with a prefix
     // if it does separete all words into a list (furure proffing if
     // some commands have arguments)
