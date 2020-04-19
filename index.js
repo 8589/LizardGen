@@ -1,6 +1,6 @@
 // Config vars
 let prefix = ".";
-token = "NjgyNjcxOTYxODIxOTM3OTMx.Xn3GOg.QX1aLC3Q40XyfSglRBeZoczVP80"
+token = "NjgyNjcxOTYxODIxOTM3OTMx.XpwDDg.YFxXbOwk-ZBvNu0bQujb5AaCwvk"
 
 // The number of links to send for scrappers
 let numberOfLinksToSend = 10
