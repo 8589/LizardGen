@@ -88,21 +88,6 @@ function getPermitions(permitionLine){
     }
 }
 
-const readline = require('readline');
-
-var file = 'Combos/spotify';
-var linesCount = 0;
-var rl = readline.createInterface({
-    input: fs.createReadStream(file),
-    output: process.stdout,
-    terminal: false
-});
-rl.on('line', function (line) {
-    linesCount++; // on each linebreak, add +1 to 'linesCount'
-});
-rl.on('close', function () {
-    console.log(linesCount); // print the result when the 'close' event is called
-});
 
 bot.on("ready", () => {
     comboFiles = fs.readdirSync(comboDir)
@@ -115,7 +100,7 @@ bot.on("ready", () => {
         console.log((`   .Connecté à : ${bot.user.tag}`).white);
         console.log((`   .Version De L'API Discord actuelle : ${Discord.version}`).white);
 
-        console.log(figlet.textSync(".[ CMD ON ].").red);
+        console.log(figlet.textSync(".[ Yaikmic ].").red);
         bot.user.setActivity("Generator | .help")
     })
 })
