@@ -113,6 +113,128 @@ bot.on("message", message => {
         let args = message.content.substring(prefix.length).split(" ")
         args.map(arg => addSlashes(arg))
         // Test for all available commands
+        if (message.content.startsWith(prefix + "stock")) {
+          var amazon = fs.readFileSync('./Combos/amazon.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var cdiscount = fs.readFileSync('./Combos/cdiscount.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var crunchyroll = fs.readFileSync('./Combos/crunchyroll.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var deezer = fs.readFileSync('./Combos/deezer.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var discord = fs.readFileSync('./Combos/discord.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var disney = fs.readFileSync('./Combos/disney+.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var ea = fs.readFileSync('./Combos/ea.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var emailaccess = fs.readFileSync('./Combos/emailaccess.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var espn = fs.readFileSync('./Combos/espn.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var facebook = fs.readFileSync('./Combos/facebook.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var fitbit = fs.readFileSync('./Combos/fitbit.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var fortnite = fs.readFileSync('./Combos/fortnite.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var gmail = fs.readFileSync('./Combos/gmail.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var gucci = fs.readFileSync('./Combos/gucci.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var hbo = fs.readFileSync('./Combos/hbo.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var hulu = fs.readFileSync('./Combos/hulu.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var instagram = fs.readFileSync('./Combos/instagram.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var lol = fs.readFileSync('./Combos/lol.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var macys = fs.readFileSync('./Combos/macys.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var mcdonald = fs.readFileSync('./Combos/mcdonald.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var mega = fs.readFileSync('./Combos/mega.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var minecraft = fs.readFileSync('./Combos/minecraft.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var moviepass = fs.readFileSync('./Combos/moviepass.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var mycanal = fs.readFileSync('./Combos/mycanal.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var netflix = fs.readFileSync('./Combos/netflix.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var nordvpn = fs.readFileSync('./Combos/nordvpn.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var origin = fs.readFileSync('./Combos/origin.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var pandora = fs.readFileSync('./Combos/pandora.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var pornhub = fs.readFileSync('./Combos/pornhub.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var psn = fs.readFileSync('./Combos/psn.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var roblox = fs.readFileSync('./Combos/roblox.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var skinhub = fs.readFileSync('./Combos/skinhub.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var snapchat = fs.readFileSync('./Combos/snapchat.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var spotify = fs.readFileSync('./Combos/spotify.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var steam = fs.readFileSync('./Combos/steam.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var tidal = fs.readFileSync('./Combos/tidal.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var twitchtokens = fs.readFileSync('./Combos/twitchtokens.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var ubisoft = fs.readFileSync('./Combos/ubisoft.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var udemy = fs.readFileSync('./Combos/udemy.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var uplay = fs.readFileSync('./Combos/uplay.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var vyprvpn = fs.readFileSync('./Combos/vyprvpn.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var wish = fs.readFileSync('./Combos/wish.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var wwe = fs.readFileSync('./Combos/wwe.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var zee5 = fs.readFileSync('./Combos/zee5.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var zenmate = fs.readFileSync('./Combos/zenmate.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var zyngapoker = fs.readFileSync('./Combos/zyngapoker.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var anonfilelink = fs.readFileSync('./Links/anonfilelink.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var database = fs.readFileSync('./Links/database.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var ebook = fs.readFileSync('./Links/e-book.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var leak = fs.readFileSync('./Links/leak.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var method = fs.readFileSync('./Links/method.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var proxies = fs.readFileSync('./Links/proxies.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var scriptbot = fs.readFileSync('./Links/scriptbot.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var scriptweb = fs.readFileSync('./Links/scriptweb.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          var tool = fs.readFileSync('./Links/tool.txt', 'utf8').split(/\r\n|\r|\n/).length - 1;
+          let stock = new Discord.RichEmbed()
+            .setAuthor(message.author.tag, message.author.displayAvatarURL)
+            .addField("**__GEN BASIC__**", `<:amazon:709463873090093089> **Amazon :** \`${amazon}\` comptes !
+          <:Cdiscount:711674749570383933> **Cdiscount :** \`${cdiscount}\` comptes ! 
+          <:crunchyroll:711640753813717044> **Crunchyroll :** \`${crunchyroll}\` comptes ! 
+          <:Deezer:711962819125444618> **Deezer :** \`${deezer}\` comptes ! 
+          <:discord:711640753176182869> **Discord :** \`${discord}\` comptes ! 
+          <:Disneyplus:711664161331085312> **Disney :** \`${disney}\` comptes ! 
+          <:EA:711675657129689128> **EA :** \`${ea}\` comptes ! 
+          📧 **Email Access :** \`${emailaccess}\` comptes ! 
+          <:ESPN:711955696941531318> **ESPN :** \`${espn}\` comptes ! 
+          <:facebook:711640753482366996> **Facebook :** \`${facebook}\` comptes ! 
+          <:Fitbit:711963865713213483> **Fitbit :** \`${fitbit}\` comptes ! 
+          <:Fortnite:711663239317946459> **Fortnite :** \`${fortnite}\` comptes !  
+          <:gmail:711640752865804379> **Gmail :** \`${gmail}\` comptes ! 
+          <:GUCCI:711954024735178763> **Gucci :** \`${gucci}\` comptes !  
+          <:HBO:711956036311056444> **HBO :** \`${hbo}\` comptes !  
+          <:Hulu:711673765758763008> **Hulu :** \`${hulu}\` comptes !  
+          <:instagram:711640752274407495> **Instagram :** \`${instagram}\` comptes !  
+          <:Leagueoflegends:711954978721497118> **League of Legends :** \`${lol}\` comptes ! 
+          <:Macys:711959621346001006> **Macys :** \`${macys}\` comptes ! 
+          <:Mcdoanlds:711964337312366703> **Mcdonald :** \`${mcdonald}\` comptes !  
+          <:Mega:711965063203913748> **Mega :** \`${mega}\` comptes !  
+          <:Minecraft:711965450145366018> **Minecraft :** \`${minecraft}\` comptes ! 
+          <:moviepass:711666147493412884> **MoviePass :** \`${moviepass}\` comptes !
+          <:Mycanal:711960407719542796> **MyCanal :** \`${mycanal}\` comptes ! 
+          <:netflix:711640752362618900> **Netflix :** \`${netflix}\` comptes ! 
+          <:nordvpn:711640752723329135> **NordVPN :** \`${nordvpn}\` comptes !
+          <:origin:711640751972286485> **Origin :** \`${origin}\` comptes !
+          <:Pandora:711966674605310112> **Pandora :** \`${pandora}\` comptes !
+          <:pornhub:711640751653781564> **Pornhub :** \`${pornhub}\` comptes !
+          <:PSN:711675342276001867> **PSN :** \`${psn}\` comptes !
+          <:roblox:711640752350036038> **Roblox :** \`${roblox}\` comptes ! 
+          <:Skinhub:711967189208399873> **Skinhub :** \`${skinhub}\` comptes !
+          <:snapchat:711640751573827624> **Snapchat :** \`${snapchat}\` comptes !
+          <:spotify:711640753876631642> **Spotify :** \`${spotify}\` comptes !
+          <:steam:711640750625914891> **Steam :** \`${steam}\` comptes !
+          <:Tidal:711967524606181428> **Tidal :** \`${tidal}\` comptes !
+          <:twitch:711640750424719462> **Twitch :** \`${twitchtokens}\` comptes !
+          <:Ubisoft:711666873162399816> **Ubisoft :** \`${ubisoft}\` comptes !
+          <:Udermy:711968650005053561> **Udemy :** \`${udemy}\` comptes !
+          <:Uplay:711969089702330391> **Uplay :** \`${uplay}\` comptes !
+          <:VyprVPN:711662524256354388> **VyprVPN :** \`${vyprvpn}\` comptes !
+          <:Wish:711667459236692048> **Wish :** \`${wish}\` comptes !
+          <:wwe:711666575480062093> **WWE :** \`${wwe}\` comptes !
+          <:Zee5:711958687333482517> **Zee5 :** \`${zee5}\` comptes !
+          <:ZenmateVPN:711668614230442055> **ZenmateVPN :** \`${zenmate}\` comptes !
+          <:Zyngapoker:711957580162924574> **ZyngaPoker :** \`${zyngapoker}\` comptes !
+          `, true)
+          .addField("**__GEN PREMIUM__**", `
+          <:anonfile:712774171607695491> **AnonFileLink :** \`${anonfilelink}\` !
+          <:DataBase:711978731954241616> **Database :** \`${database}\` !
+          <:Tools:711977781009055745> **Tool :** \`${tool}\` !
+          <:Proxies:711972890597130300> **Proxies :** \`${proxies}\` !
+          :bookmark: **E-Book :** \`${ebook}\` !
+          <:Method:711979993831571466> **Method :** \`${method}\` !
+          <:ScriptWeb:711979781541068901> **Script-Web :** \`${scriptweb}\` !
+          :robot: **Script-Bot :** \`${scriptbot}\` !
+          <:Leaks:711979145357295737> **Leak :** \`${leak}\` !
+          `, true)
+          .setThumbnail(message.guild.iconURL)
+          .setColor("PURPLE")
+          .setFooter("@Nyrok10 on Twitter", "https://cdn.discordapp.com/emojis/590848931852713984.png")
+          .setTimestamp()
+          message.channel.send(stock)
+        }
         switch (args[0]) {
 
             // print the help message
