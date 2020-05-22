@@ -240,7 +240,6 @@ bot.on("message", message => {
                 `, true)
                 .setThumbnail(message.guild.iconURL)
                 .setColor("PURPLE")
-                .setFooter("@Nyrok10 on Twitter", "https://cdn.discordapp.com/emojis/590848931852713984.png")
                 .setTimestamp()
             message.channel.send(stock)
             break;
