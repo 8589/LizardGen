@@ -101,7 +101,7 @@ bot.on("ready", () => {
         console.log((`   .Version De L'API Discord actuelle : ${Discord.version}`).white);
 
         console.log(figlet.textSync(".[ Yaikmic ].").red);
-        bot.user.setActivity("Official server : https://discord.gg/Ux5uUD7")
+        bot.user.setActivity("Official server : discord.gg/Ux5uUD7")
     })
 })
 
